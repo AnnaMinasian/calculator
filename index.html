@@ -1,0 +1,47 @@
+<!Doctype html>
+<html>
+<head>
+    <title>Calculator</title>
+    <meta charset="utf-8">
+    <link href="style/reset.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Добро пожаловать! Я Ваш онлайн-калькулятор.</h1>
+    <form name="Calculator">
+        <div>
+            <input type="text" class="text" name="Display" value="">
+        </div>
+        <div>
+            <input type="button" class="lightGray" value="C" onClick="ClearLastSymbol()">
+            <input type="button" class="lightGray" value="AC" onClick="ClearAll()"> 
+            <input type="button" class="lightGray" value="+/-" onClick="">
+            <input type="button" class="operator" value="/" onClick="operate('/')">
+        </div>
+        <div>
+            <input type="button" class="number" value="1" onClick="AddDigit(1)">
+            <input type="button" class="number" value="2" onClick="AddDigit(2)">
+            <input type="button" class="number" value="3" onClick="AddDigit(3)">
+            <input type="button" class="operator" value="*" onClick="operate('*')">
+        </div>
+        <div>
+            <input type="button" class="number" value="4" onClick="AddDigit(4)">
+            <input type="button" class="number" value="5" onClick="AddDigit(5)">
+            <input type="button" class="number" value="6" onClick="AddDigit(6)">
+            <input type="button" class="operator" value="+" onClick="operate('+')">
+        </div>
+        <div>
+            <input type="button" class="number" value="7" onClick="AddDigit(7)">
+            <input type="button" class="number" value="8" onClick="AddDigit(8)">
+            <input type="button" class="number" value="9" onClick="AddDigit(9)">
+            <input type="button" class="operator" value="-" onClick="operate('-')">
+        </div>
+        <div>
+            <input type="button" class="Dot" value="." onClick="Dot()">
+            <input type="button" class="zero" value="0" onClick="AddDigit(0)">
+            <input type="button" class="operator" value="=" onClick="calculate()">
+        </div>
+    </form>
+</body>
+</html>

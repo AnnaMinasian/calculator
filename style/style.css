@@ -1,0 +1,48 @@
+body, form {
+    text-align: center;
+    margin-top: 30px;
+}
+h1, input {
+    font-size: 1.5rem;
+}
+form, .text {
+    background-color: rgb(39, 38, 38);
+}
+form, .text {
+    border-radius: 10px;
+}
+form, input {
+    border: 1px solid gray;
+}
+form {
+    display: inline-block;
+    padding: 10px;
+}
+input {
+    width: 70px;
+    height: 60px;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 0;
+    background-color: rgb(131, 131, 131);
+    color: white;
+}
+input:hover {
+    box-shadow: 0 0 10px 1px inset rgb(255, 255, 255);
+}
+.lightGray:hover {
+    box-shadow: 0 0 10px 1px inset rgb(58, 58, 58);
+}
+.zero {
+    width: 155px;
+}
+.text {
+    width: 323px;
+}
+.operator {
+    background-color: rgb(247, 102, 66);
+}
+.lightGray {
+    background-color: rgb(216, 216, 216);
+    color: black;
+}
