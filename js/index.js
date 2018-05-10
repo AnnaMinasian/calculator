@@ -50,7 +50,7 @@ function clearLastSymbol() {
 
 function operate(op) {
     if (Memory1 == null) {
-        Memory1 = +Actually;
+        Memory1 = +document.Calculator.Display.value;
         Actually = 0;
         operation = op;
         document.Calculator.Display.value = op;
@@ -91,4 +91,10 @@ function calculate() {
     Memory1 = Actually;
     Memory2 = null;
     Actually = 0;
+}
+
+function equal() {
+    Memory2 = +Actually;
+    calculate();
+    Memory1 = null;
 }
