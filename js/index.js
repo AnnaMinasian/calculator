@@ -98,3 +98,13 @@ function equal() {
     calculate();
     Memory1 = null;
 }
+
+function changePlus() {
+    if (Actually > 0) {
+        Actually = +('-' + Actually);
+    }
+    else if (Actually < 0) {
+        Actually = Actually.toString().slice(1);
+    }
+    document.Calculator.Display.value = Actually;
+}
