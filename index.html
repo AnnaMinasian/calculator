@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <link href="style/reset.css" rel="stylesheet">
     <link href="style/style.css" rel="stylesheet">
+    <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -14,33 +15,33 @@
             <input type="text" class="text" name="Display" value="">
         </div>
         <div>
-            <input type="button" class="lightGray" value="C" onClick="ClearLastSymbol()">
-            <input type="button" class="lightGray" value="AC" onClick="ClearAll()"> 
-            <input type="button" class="lightGray" value="+/-" onClick="">
+            <input type="button" class="lightGray" value="AC" onClick="clearAll()"> 
+            <input type="button" class="lightGray" value="C" onClick="clearLastSymbol()">
+            <input type="button" class="lightGray" value="+/-" onClick="changePlus()">
             <input type="button" class="operator" value="/" onClick="operate('/')">
         </div>
         <div>
-            <input type="button" class="number" value="1" onClick="AddDigit(1)">
-            <input type="button" class="number" value="2" onClick="AddDigit(2)">
-            <input type="button" class="number" value="3" onClick="AddDigit(3)">
+            <input type="button" class="number" value="1" onClick="addDigit(1)">
+            <input type="button" class="number" value="2" onClick="addDigit(2)">
+            <input type="button" class="number" value="3" onClick="addDigit(3)">
             <input type="button" class="operator" value="*" onClick="operate('*')">
         </div>
         <div>
-            <input type="button" class="number" value="4" onClick="AddDigit(4)">
-            <input type="button" class="number" value="5" onClick="AddDigit(5)">
-            <input type="button" class="number" value="6" onClick="AddDigit(6)">
+            <input type="button" class="number" value="4" onClick="addDigit(4)">
+            <input type="button" class="number" value="5" onClick="addDigit(5)">
+            <input type="button" class="number" value="6" onClick="addDigit(6)">
             <input type="button" class="operator" value="+" onClick="operate('+')">
         </div>
         <div>
-            <input type="button" class="number" value="7" onClick="AddDigit(7)">
-            <input type="button" class="number" value="8" onClick="AddDigit(8)">
-            <input type="button" class="number" value="9" onClick="AddDigit(9)">
+            <input type="button" class="number" value="7" onClick="addDigit(7)">
+            <input type="button" class="number" value="8" onClick="addDigit(8)">
+            <input type="button" class="number" value="9" onClick="addDigit(9)">
             <input type="button" class="operator" value="-" onClick="operate('-')">
         </div>
         <div>
-            <input type="button" class="Dot" value="." onClick="Dot()">
-            <input type="button" class="zero" value="0" onClick="AddDigit(0)">
-            <input type="button" class="operator" value="=" onClick="calculate()">
+            <input type="button" class="Dot" value="." onClick="dot()">
+            <input type="button" class="zero" value="0" onClick="addDigit(0)">
+            <input type="button" class="operator" value="=" onClick="(operate())">
         </div>
     </form>
 </body>
