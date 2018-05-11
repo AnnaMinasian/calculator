@@ -13,7 +13,7 @@ function addDigit(dig) {
             actually = +dig;
         }
         else {
-            actually = +(actually.toString() + dig.toString());
+            actually = actually.toString() + dig.toString();
         }
     }
     document.Calculator.Display.value = actually;
@@ -81,11 +81,19 @@ function calculate() {
             actually = memory1 * memory2;
             break;
         case "/":
+            if ( memory2 == 0) {
+                actually = "Ошибка";
+            }
+            else {
                 actually = memory1 / memory2;
+            }
             break;
         default:
             actually = "Not supported operation";
             break;
+    }
+    if (actually.toString().indexOf(".") != -1) {
+        actually = +actually.toFixed(10);
     }
     document.Calculator.Display.value = actually;
     memory1 = actually;
