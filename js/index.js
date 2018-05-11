@@ -1,57 +1,57 @@
-var Memory1 = null;
-var Memory2 = null;
-var Actually = 0;
+var memory1 = null;
+var memory2 = null;
+var actually = 0;
 var operation = 0;
 var maxlength = 40;
 
 function addDigit(dig) {
-    if (Actually.toString().length > maxlength) {
-        Actually = "Error";
+    if (actually.toString().length > maxlength) {
+        actually = "Error";
     }
     else {
-        if (Actually === 0) {
-            Actually = +dig;
+        if (actually === 0) {
+            actually = +dig;
         }
         else {
-            Actually = +(Actually.toString() + dig.toString());
+            actually = +(actually.toString() + dig.toString());
         }
     }
-    document.Calculator.Display.value = Actually;
+    document.Calculator.Display.value = actually;
 }
 
 function dot() {
-    if (Actually.length == 0) {
-        Actually = "0.";
+    if (actually.length == 0) {
+        actually = "0.";
     }
-    else if (Actually.toString().indexOf(".") == -1) {
-        Actually = Actually + ".";
+    else if (actually.toString().indexOf(".") == -1) {
+        actually = actually + ".";
     }
-    document.Calculator.Display.value = Actually;
+    document.Calculator.Display.value = actually;
 }
 
 function clearAll() {
-    Actually = 0;
-    Memory1 = null;
-    Memory2 = null;
+    actually = 0;
+    memory1 = null;
+    memory2 = null;
     operation = 0;
-    document.Calculator.Display.value = Actually;
+    document.Calculator.Display.value = actually;
 }
 
 function clearLastSymbol() {
-    if (Actually.toString().length > 0) {
-        let result = Actually.toString().substring(0, Actually.toString().length - 1);
-        Actually = +result;
+    if (actually.toString().length > 0) {
+        let result = actually.toString().substring(0, actually.toString().length - 1);
+        actually = +result;
     }
     else {
-        Actually = 0;
+        actually = 0;
     }
-    document.Calculator.Display.value = Actually;
+    document.Calculator.Display.value = actually;
 }
 
 function operate(op) {
-    if (Memory1 == null) {
-        Memory1 = +document.Calculator.Display.value;
-        Actually = 0;
+    if (memory1 == null) {
+        memory1 = +document.Calculator.Display.value;
+        actually = 0;
         operation = op;
         document.Calculator.Display.value = op;
     } 
@@ -59,11 +59,11 @@ function operate(op) {
         operation = op;
         document.Calculator.Display.value = op;
     }
-    else if (Memory2 == null) {
-        Memory2 = +Actually;
-        Actually = 0; 
+    else if (memory2 == null) {
+        memory2 = +actually;
+        actually = 0; 
     }
-    if (Memory1 != null && Memory2 != null) {
+    if (memory1 != null && memory2 != null) {
         calculate(); 
     }
     operation = op;  
@@ -72,39 +72,39 @@ function operate(op) {
 function calculate() {
     switch (operation) {
         case "+":
-            Actually = Memory1 + Memory2;
+            actually = memory1 + memory2;
             break;
         case "-":
-            Actually = Memory1 - Memory2;
+            actually = memory1 - memory2;
             break;
         case "*":
-            Actually = Memory1 * Memory2;
+            actually = memory1 * memory2;
             break;
         case "/":
-                Actually = Memory1 / Memory2;
+                actually = memory1 / memory2;
             break;
         default:
-            Actually = "Not supported operation";
+            actually = "Not supported operation";
             break;
     }
-    document.Calculator.Display.value = Actually;
-    Memory1 = Actually;
-    Memory2 = null;
-    Actually = 0;
+    document.Calculator.Display.value = actually;
+    memory1 = actually;
+    memory2 = null;
+    actually = 0;
 }
 
 function equal() {
-    Memory2 = +Actually;
+    memory2 = +actually;
     calculate();
-    Memory1 = null;
+    memory1 = null;
 }
 
 function changePlus() {
-    if (Actually > 0) {
-        Actually = +('-' + Actually);
+    if (actually > 0) {
+        actually = +('-' + actually);
     }
-    else if (Actually < 0) {
-        Actually = Actually.toString().slice(1);
+    else if (actually < 0) {
+        actually = actually.toString().slice(1);
     }
-    document.Calculator.Display.value = Actually;
+    document.Calculator.Display.value = actually;
 }
