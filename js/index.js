@@ -8,6 +8,9 @@ function addDigit(dig) {
     if (actually.toString().length > maxlength) {
         actually = "Error";
     }
+    else if (actually === '-0') {
+        actually = actually.slice(0, 1) + dig.toString();
+    }
     else {
         if (actually === 0) {
             actually = +dig;
@@ -40,7 +43,12 @@ function clearAll() {
 function clearLastSymbol() {
     if (actually.toString().length > 0) {
         let result = actually.toString().substring(0, actually.toString().length - 1);
-        actually = +result;
+        if (isNaN(result)) {
+            actually = 0;
+        }
+        else {
+            actually = +result;
+        }
     }
     else {
         actually = 0;
@@ -102,16 +110,24 @@ function calculate() {
 }
 
 function equal() {
-    memory2 = +actually;
-    calculate();
-    memory1 = null;
+    if (operation == 0) {
+    }
+    else {
+        memory2 = +actually;
+        calculate();
+        memory1 = null;
+        operation = 0;
+    }
 }
 
 function changePlus() {
-    if (actually > 0) {
-        actually = +('-' + actually);
+    if (actually === '-0') {
+        actually = 0;
     }
-    else if (actually < 0) {
+    else if (parseInt(actually) >= 0) {
+        actually = '-' + actually;
+    }
+    else {
         actually = actually.toString().slice(1);
     }
     document.Calculator.Display.value = actually;
